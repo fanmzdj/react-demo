@@ -21,7 +21,7 @@ var SliderList = React.createClass({
         $('.swipe-index-con .item-swipe-index').eq(index).addClass('active');
     },
     render: function () {
-        var dir = '../dist/assets/';
+        var dir = '../img/';
         var lists = [   
                         {name:'', img:'00.jpg'},
                         {name:'', img:'01.jpg'},
