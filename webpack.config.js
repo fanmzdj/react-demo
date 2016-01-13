@@ -30,5 +30,8 @@ module.exports = {
             { test: /\.scss$/, loader: 'style-loader!css-loader!scss-loader'},
             { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192&name=../assets/[name].[ext]'},
         ]
-    }
+    },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin('common.module.js')
+    ]
 };
