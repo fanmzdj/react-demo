@@ -1,0 +1,10 @@
+/* flow.css */
+.flow-wrap {
+	margin:0 0 50px;
+}
+.flow-item {
+	min-height: 100px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #eee;
+	width: 100%;
+}

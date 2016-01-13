@@ -1,0 +1,17 @@
+/* header.css */
+.header-wrap {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+    background-color: #06BF04;
+    z-index: 101;
+    color: #fff;
+    font-size: 14px;
+}
+.header-wrap .shop-link {
+    position: absolute;
+    right: 10px;
+    color: #fff;
+}

@@ -1,0 +1,29 @@
+/* slider.css */
+.slider-wrap {
+	background-color: #eee;
+	position: relative;
+}
+.slider-wrap .slider-content div img {
+	width: 100%;
+}
+.swipe-index-con {
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 30px;
+}
+.swipe-index-con .item-swipe-index {
+    position: relative;
+    display: inline-block;
+    height: 4px;
+    width: 16px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 0 3px;
+}
+.swipe-index-con .item-swipe-index.active {
+    background-color: tomato;
+}
