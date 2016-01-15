@@ -1,0 +1,118 @@
+/* actionPlusMinus.js */
+.plsu-minus-action {
+    position: absolute;
+    right: 15px;
+    width: 100px;
+    height: 32px;
+}
+.plsu-minus-action .item-one,
+.plsu-minus-action .item-two {
+	position: relative;
+}
+.plsu-minus-action .action-plus {
+    position: absolute;
+    width: 50%;
+    height: 32px;
+    right: 0;
+    z-index: 11;
+}
+.plsu-minus-action .action-minus {
+    position: absolute;
+    width: 50%;
+    height: 32px;
+    left: 0;
+    z-index: 11;
+}
+.plsu-minus-action .two-number {
+    width: 60px;
+    position: absolute;
+    left: 20px;
+    height: 30px;
+    line-height: 30px;
+    top: 1px;
+    border: 1px solid #F7F7F8;
+    background: #fff;
+    color: #3C6!important;
+    text-align: center;
+}
+.plsu-minus-action .minus-plus {
+    display: inline-block;
+    float: left;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: url('../img/icon_list-2.png') no-repeat;
+    background-size: 140px 180px;
+    position: absolute;
+    z-index: 10;
+}
+.plsu-minus-action.two-input {
+    width: 60px;
+    position: absolute;
+    left: 20px;
+    height: 30px;
+    line-height: 30px;
+    top: 1px;
+    border: 1px solid #F7F7F8;
+    background: white;
+    color: #3C6!important;
+    text-align: center;
+}
+.plsu-minus-action .one-plus {
+    right: 1px;
+    background-position: -33px -71px!important;
+}
+.plsu-minus-action .two-plus {
+    right: 1px;
+    background-position: -33px -71px!important;
+}
+.plsu-minus-action .two-minus {
+    left: 0;
+    background-position: 1px -71px!important;
+}
+
+
+.p-good-action .p-good-item-two {
+    position: relative;
+    display: none;
+}
+.plsu-minus-action .add-plus {
+    right: 1px;
+    background-position: -33px -71px;
+}
+.p-good-action .number-plus {
+    right: 1px;
+    background-position: -33px -71px;
+}
+.p-good-action .number-minus {
+    left: 0;
+    background-position: 1px -71px;
+}
+.p-good-action .number-input {
+    width: 60px;
+    position: absolute;
+    left: 20px;
+    height: 30px;
+    line-height: 30px;
+    top: 1px;
+    border: 1px solid #F7F7F8;
+    background: white;
+    color: #3C6!important;
+    text-align: center;
+}
+.p-good-action .action-minus-plus {
+    position: absolute;
+    height: 32px;
+    width: 50px;
+    z-index: 12;
+}
+.p-good-action .action-plus {
+    width: 60px;
+    right: 0;
+}
+.p-good-action .action-minus-plus.action-minus {
+    left: 0;
+}
+.p-good-action .action-minus-plus.action-plus {
+    right: 1px;
+}

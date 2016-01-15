@@ -6,9 +6,10 @@
 require("../css/section.css") // 载入 css
 
 // 载入模块
-var $ = require('../node_modules/jquery/dist/jquery.min.js');
+var $ = require('../node_modules/commonjs-zepto/zepto.js').$;
 var React = require('../node_modules/react/dist/react.js');
 var ReactDOM = require('../node_modules/react-dom/dist/react-dom.js');
+var ActionPlusMinusItem = require('./actionPlusMinus.js');
 // 定义子组件
 var SectionItem = React.createClass({
     getInitialState: function() {
@@ -27,6 +28,7 @@ var SectionItem = React.createClass({
                     return (
                         <div className={'section-column section-column'+col.column} key={i}>
                             Section{i}
+                            <ActionPlusMinusItem className={"section-action"}></ActionPlusMinusItem>
                         </div>
                     );
                 })

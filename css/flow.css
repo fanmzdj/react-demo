@@ -2,9 +2,71 @@
 .flow-wrap {
 	margin:0 0 50px;
 }
+.flow-wrap .block-title {
+	text-align: center;
+    background-color: #eceff1;
+    height: 40px;
+    color: #000;
+    font-size: 16px;
+    line-height: 40px;
+    margin: 0;
+}
 .flow-item {
 	min-height: 100px;
 	box-sizing: border-box;
 	border-bottom: 1px solid #eee;
 	width: 100%;
 }
+/* flow.css 三列 */
+.flow-wrap .column3-block .column3-block-item {
+	width: 33.3%;
+	float: left;
+	display: block;
+	min-height: 100px;
+	box-sizing: border-box;
+	border-right: 1px solid #eee;
+}
+.flow-wrap .column3-block .column3-block-item:nth-child(3) {
+	border-right: 0px;
+}
+/* flow.css 上面两列 下面五列 */
+.flow-wrap .column-u2d5-block .column-u2d5-block-u2-item,
+.flow-wrap .column-u2d5-block .column-u2d5-block-d5-item {
+	float: left;
+	display: block;
+	min-height: 100px;
+	box-sizing: border-box;
+	border-right: 1px solid #eee;
+}
+.flow-wrap .column-u2d5-block .column-u2d5-block-u2-item:nth-child(1) {
+	width: 60%;
+}
+.flow-wrap .column-u2d5-block .column-u2d5-block-u2-item:nth-child(2) {
+	width: 40%;
+}
+.flow-wrap .column-u2d5-block .column-u2d5-block-u2-item {
+	border-bottom: 1px solid #eee;
+}
+.flow-wrap .column-u2d5-block .column-u2d5-block-d5-item {
+	width: 20%;
+}
+/* flow.css 上面四列 下面四列 */
+.flow-wrap .column-u4d4-block .column-u4d4-block-u4-item,
+.flow-wrap .column-u4d4-block .column-u4d4-block-d4-item {
+	float: left;
+	display: block;
+	min-height: 100px;
+	box-sizing: border-box;
+	border-right: 1px solid #eee;
+}
+.flow-wrap .column-u4d4-block .column-u4d4-block-u4-item,
+.flow-wrap .column-u4d4-block .column-u4d4-block-d4-item {
+	width: 20%;
+	border-bottom: 1px solid #eee;
+}
+.flow-wrap .column-u4d4-block .column-u4d4-block-u4-item:nth-child(1),
+.flow-wrap .column-u4d4-block .column-u4d4-block-d4-item:nth-child(5) {
+	width: 40%;
+}
+
+

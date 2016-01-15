@@ -6,6 +6,7 @@
   "dependencies": {
     "babel-loader": "^6.2.0",
     "browser": "^0.2.6",
+    "commonjs-zepto": "0.0.1",
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
     "jquery": "^2.1.4",

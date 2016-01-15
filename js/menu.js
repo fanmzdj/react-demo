@@ -7,7 +7,7 @@
 require("../css/menu.css") // 载入 css
 
 // 载入模块
-var $ = require('../node_modules/jquery/dist/jquery.min.js');
+var $ = require('../node_modules/commonjs-zepto/zepto.js').$
 var React = require('../node_modules/react/dist/react.js');
 var ReactDOM = require('../node_modules/react-dom/dist/react-dom.js');
 
@@ -31,7 +31,17 @@ var MenuItem = React.createClass({
         return (
             <li className={'menu-item menu-'+item.id} onClick={this.tap.bind(this, 'menu-'+item.id)}>
                 <a href="javascript:void(0)">
-                    <em className={"icon-menu icon-"+item.id+" "+active}></em>
+                    <em className={"icon-menu icon-"+item.id+" "+active}>
+                        {
+                            (function(item) {
+                                if(item.id=="cart") {
+                                    return(
+                                        <i id="car_count" className="car-count hide">0</i>
+                                    );
+                                }
+                            })(item)
+                        }
+                    </em>
                     <p>{item.name}</p>
                 </a>
             </li>
@@ -45,8 +55,15 @@ var MenuList = React.createClass({
             title: 'hello world'
         };
     },
-    tap:function () {
-        
+    componentDidMount: function () {
+        this.initCarNum();
+    },
+    // 购物车数量初始化
+    initCarNum: function () {
+        var carNum = 0;
+        if(carNum>0) {
+            $('#car_count').text(carNum).removeClass('hide');
+        }
     },
     render: function () {
         var names = [   {id:'order', name:'菜单'},

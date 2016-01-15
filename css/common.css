@@ -22,8 +22,9 @@ a, a:hover, button, button:hover{
 	zoom: 1;
     clear: both;
 }
-
-
+.hide {
+    display: none!important;
+}
 
 
 
