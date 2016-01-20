@@ -33,11 +33,11 @@ var ColumnU4D4Block = React.createClass({
                     lists.map(function (item,i) {
                         if(i<4) {
                             return (
-                                <li className="column-u4d4-block-u4-item"></li>
+                                <li className="column-u4d4-block-u4-item" key={i}></li>
                             );
                         }else{
                             return (
-                                <li className="column-u4d4-block-d4-item"></li>
+                                <li className="column-u4d4-block-d4-item" key={i}></li>
                             );
                         }
                     })
@@ -69,11 +69,11 @@ var ColumnU2D5Block = React.createClass({
                     lists.map(function (item,i) {
                         if(i<2) {
                             return (
-                                <li className="column-u2d5-block-u2-item"></li>
+                                <li className="column-u2d5-block-u2-item" key={i}></li>
                             );
                         }else{
                             return (
-                                <li className="column-u2d5-block-d5-item"></li>
+                                <li className="column-u2d5-block-d5-item" key={i}></li>
                             );
                         }
                     })
@@ -100,7 +100,7 @@ var Column3Block = React.createClass({
                     // 数组
                     lists.map(function (item,i) {
                         return (
-                            <li className="column3-block-item"></li>
+                            <li className="column3-block-item" key={i}></li>
                         );
                     })
                 }

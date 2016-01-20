@@ -3,7 +3,7 @@ var config = {
     src: __dirname+'/js',
     dist: __dirname+'/dist/js'
 };
-var host = "10.0.0.30";
+var host = "node.dev.com";
 
 module.exports = {
     context: config.src,
@@ -13,7 +13,8 @@ module.exports = {
         slider: ['./slider.js'],
         section: ['./section.js'],
         menu: ['./menu.js'],
-        flow: ['./flow.js']
+        flow: ['./flow.js'],
+        navigator: ['./navigator.js']
     },
     output: {
         path: config.dist,
