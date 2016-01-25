@@ -10,7 +10,7 @@
 .navigator-wrap.active {
     position: fixed!important;
     top: 0;
-    z-index: 1002;
+    z-index: 102;
 }
 .navigator-wrap .navigator-title {
     text-align: center;
@@ -46,9 +46,24 @@
 }
 .navigator-list {
     background-color: #f7f7f7;
-    border-right: 1px solid #ddd;
     z-index: 101;
     text-align: left;
+}
+.navigator-list-wrap {
+    margin-top: 40px;
+    height: 100%;
+    background-color: #f7f7f7;
+    border-right: 1px solid #ddd;
+}
+.navigator-list li {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+    text-align: left;
+    padding-left: 15px;
+    color: #000;
+    overflow: hidden;
 }
 .navigator-wrap span {
     line-height: 40px;

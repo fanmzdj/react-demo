@@ -17,29 +17,42 @@ var Navigator = React.createClass({
     componentDidMount: function () {
     	var id=this.props.reverse;
     	var that=$('#Navigator');
-        that.data('title',$('.navigator-title').text());
-    	$(id).before(that.removeClass('hide'));
-        // 页面滚动区域计算
-        var areasData= function () {
-            var arr=[];
-            if(typeof that.data('areas')=="undefined") {
-                $('.flow-wrap-block').forEach(function(item) {
-                    arr.push($(item).offset().top);
+        var list = {
+            init: function () {
+                that.data('title',$('.navigator-title').text());
+                $(id).before(that.removeClass('hide'));
+                $('.navigator-list-wrap').css({height:window.innerHeight+'px'});
+                list.dropDOM();
+            },
+            dropDOM: function () {
+                var html='';
+                $('.flow-wrap-block').each(function(i) {
+                    html += '<li data-nid="'+i+'"">'+$(this).find('.block-title').text()+'</li>';
                 });
-                that.data('areas', JSON.stringify(arr));
-            }else{
-                arr = that.data('areas');
+                $('.navigator-list-wrap').html(html);
+                list.bind();
+            },
+            bind: function () {
+                var wrap=$('.navigator-list-wrap');
+                $('.navigator-list-wrap li').on('click', function(){
+                    var i=$(this).data('nid');
+                    var Top=$('.flow-wrap-block').eq(i).offset().top;
+                    wrap.addClass('hide');
+                    i==0?Top-=40:Top;// 对i==0特别处理
+                    window.scrollTo(0,Top);
+                });
             }
-            return arr;
         };
+        // 更新滚动title
         var scroll = {
             areas: function () {
                 var that=$('#Navigator');
                 var arr=[];
-                if(typeof that.data('areas')=="undefined") {
+                if(true||typeof that.data('areas')=="undefined") {
                     $('.flow-wrap-block').forEach(function(item) {
                         arr.push($(item).offset().top);
                     });
+                    arr.push(Infinity);
                     that.data('areas', JSON.stringify(arr));
                 }else{
                     arr = that.data('areas');
@@ -66,29 +79,39 @@ var Navigator = React.createClass({
             }else{
                 $('.navigator-wrap').removeClass('active');
             }
-            // 跟新滚动title
+            // 更新滚动title
             scroll.titleUpdate(opt.SY);
         };
+        // 事件绑定
+        list.init();
+    },
+    drop: function () {
+        var wrap=$('.navigator-list-wrap');
+        if(wrap.hasClass('hide')) {
+            wrap.removeClass('hide');
+        }else{
+            wrap.addClass('hide');
+        }
     },
     render: function () {
         var lists = [
-        				{id:'', name:''},
-        				{id:'', name:''},
         				{id:'', name:''}
                     ];
         return (
         	<div className="navigator-wrap">
 	            <div className="navigator-title">限时特惠</div>
-	            <span className="i-nav-title">分类<em className="nav-icon"></em></span>
+	            <span className="i-nav-title" onClick={this.drop}>分类<em className="nav-icon"></em></span>
 	            <ul className="navigator-list">
+                    <ul className="navigator-list-wrap hide">
 		            {
 		                // 数组
 		                lists.map(function (item, i) {
 		                    return (
-		                    	<li key={i}></li>
+		                    	<li key={i}>{item.name}</li>
 	                    	);
 		                })
 		            }
+                    </ul>
 	        	</ul>
         	</div>
         );
