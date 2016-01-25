@@ -25,7 +25,7 @@ var ColumnU4D4Block = React.createClass({
                         {name:'', category:'xxxx'}
                     ];
         return (
-            <div className="column-u4d4-block" data-template-name="">
+            <div className="column-u4d4-block flow-wrap-block" data-template-name="">
                 <div className="block-title">{this.props.block.name+this.props.num}</div>
                 <ul>
                 {
@@ -61,7 +61,7 @@ var ColumnU2D5Block = React.createClass({
                         {name:'', category:'xxxx'}
                     ];
         return (
-            <div className="column-u2d5-block" data-template-name="">
+            <div className="column-u2d5-block flow-wrap-block" data-template-name="">
                 <div className="block-title">{this.props.block.name+this.props.num}</div>
                 <ul>
                 {
@@ -93,7 +93,7 @@ var Column3Block = React.createClass({
                         {name:'', category:'xxxx'}
                     ];
         return (
-            <div className="column3-block" data-template-name="">
+            <div className="column3-block flow-wrap-block" data-template-name="">
                 <div className="block-title">{this.props.block.name+this.props.num}</div>
                 <ul>
                 {
@@ -120,7 +120,7 @@ var FlowBlock = React.createClass({
                         {name:'商品xx', category:'xxxx'}
                     ];
         return (
-            <div className="flow-block" data-template-name="">
+            <div className="flow-block flow-wrap-block" data-template-name="">
                 <div className="block-title">{this.props.block.name+this.props.num}</div>
                 <ul>
                 {

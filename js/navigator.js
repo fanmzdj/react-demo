@@ -17,8 +17,58 @@ var Navigator = React.createClass({
     componentDidMount: function () {
     	var id=this.props.reverse;
     	var that=$('#Navigator');
+        that.data('title',$('.navigator-title').text());
     	$(id).before(that.removeClass('hide'));
-    	console.log(that.offset());
+        // 页面滚动区域计算
+        var areasData= function () {
+            var arr=[];
+            if(typeof that.data('areas')=="undefined") {
+                $('.flow-wrap-block').forEach(function(item) {
+                    arr.push($(item).offset().top);
+                });
+                that.data('areas', JSON.stringify(arr));
+            }else{
+                arr = that.data('areas');
+            }
+            return arr;
+        };
+        var scroll = {
+            areas: function () {
+                var that=$('#Navigator');
+                var arr=[];
+                if(typeof that.data('areas')=="undefined") {
+                    $('.flow-wrap-block').forEach(function(item) {
+                        arr.push($(item).offset().top);
+                    });
+                    that.data('areas', JSON.stringify(arr));
+                }else{
+                    arr = that.data('areas');
+                }
+                return arr;
+            },
+            titleUpdate: function (SY) {
+                var arr=this.areas();
+                for(var i=0,len=arr.length;i<len;i++) {
+                    if((i+1)<len&&SY>=(arr[i]-40)&&SY<arr[i+1]) {
+                        $('.navigator-title').html($('.flow-wrap-block').eq(i).find('.block-title').text());
+                    }
+                }
+            }
+        };
+        // 页面滚动,会执行这里的代码
+        window.onscroll = function (e) {
+            var opt = {
+                SThreshold: that.offset().top, // 当前阀值
+                SY: window.scrollY // 当前距离Top值
+            };
+            if( opt.SY>=opt.SThreshold ) {
+                $('.navigator-wrap').addClass('active');
+            }else{
+                $('.navigator-wrap').removeClass('active');
+            }
+            // 跟新滚动title
+            scroll.titleUpdate(opt.SY);
+        };
     },
     render: function () {
         var lists = [

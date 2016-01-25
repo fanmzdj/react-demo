@@ -50,7 +50,8 @@ var SectionList = React.createClass({
                         {name:'', column: 2, items: [{},{}]}
                     ];
         return (
-            <ul className="section-wrap">
+            <ul className="section-wrap flow-wrap-block">
+                <div className="block-title hide">{'限时特惠'}</div>
             {
                 // 数组
                 lists.map(function (item,i) {
